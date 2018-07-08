@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bigram", "ConsoleApp1\Bigram.csproj", "{8DE12517-0381-4CC2-87AE-CAE56A53C6C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigramTests", "BigramTests4\BigramTests.csproj", "{7D37949E-73B5-46A3-A0A7-C36709827727}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8DE12517-0381-4CC2-87AE-CAE56A53C6C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DE12517-0381-4CC2-87AE-CAE56A53C6C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DE12517-0381-4CC2-87AE-CAE56A53C6C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DE12517-0381-4CC2-87AE-CAE56A53C6C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D37949E-73B5-46A3-A0A7-C36709827727}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D37949E-73B5-46A3-A0A7-C36709827727}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D37949E-73B5-46A3-A0A7-C36709827727}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D37949E-73B5-46A3-A0A7-C36709827727}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A012CE94-063C-46B2-960A-003B43A0249C}
+	EndGlobalSection
+EndGlobal
