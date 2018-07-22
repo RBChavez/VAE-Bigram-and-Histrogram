@@ -1,0 +1,17 @@
+C:\Users\Aom\source\VAE\Bigram\Bigram_VAETests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Aom\source\VAE\Bigram\Bigram_VAETests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Aom\source\VAE\Bigram\Bigram_VAETests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Aom\source\VAE\Bigram\Bigram_VAETests\bin\Debug\Bigram_VAETests.dll
+C:\Users\Aom\source\VAE\Bigram\Bigram_VAETests\bin\Debug\Bigram_VAETests.pdb
+C:\Users\Aom\source\VAE\Bigram\Bigram_VAETests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\Aom\source\VAE\Bigram\Bigram_VAETests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Aom\source\VAE\Bigram\Bigram_VAETests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\Aom\source\VAE\Bigram\Bigram_VAETests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\Aom\source\VAE\Bigram\Bigram_VAETests\obj\Debug\Bigram_VAETests.csprojAssemblyReference.cache
+C:\Users\Aom\source\VAE\Bigram\Bigram_VAETests\obj\Debug\Bigram_VAETests.csproj.CoreCompileInputs.cache
+C:\Users\Aom\source\VAE\Bigram\Bigram_VAETests\obj\Debug\Bigram_VAETests.csproj.CopyComplete
+C:\Users\Aom\source\VAE\Bigram\Bigram_VAETests\obj\Debug\Bigram_VAETests.dll
+C:\Users\Aom\source\VAE\Bigram\Bigram_VAETests\obj\Debug\Bigram_VAETests.pdb
+C:\Users\Aom\source\VAE\Bigram\Bigram_VAETests\bin\Debug\Bigram.exe
+C:\Users\Aom\source\VAE\Bigram\Bigram_VAETests\bin\Debug\Bigram.pdb
+C:\Users\Aom\source\VAE\Bigram\Bigram_VAETests\bin\Debug\Bigram.exe.config

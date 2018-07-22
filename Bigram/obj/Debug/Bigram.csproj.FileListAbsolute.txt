@@ -1,0 +1,13 @@
+C:\Users\Aom\source\VAE\Bigram\ConsoleApp1\obj\Debug\Bigram.csproj.CoreCompileInputs.cache
+C:\Users\Aom\source\VAE\Bigram\ConsoleApp1\bin\Debug\Bigram.exe.config
+C:\Users\Aom\source\VAE\Bigram\ConsoleApp1\bin\Debug\Bigram.exe
+C:\Users\Aom\source\VAE\Bigram\ConsoleApp1\bin\Debug\Bigram.pdb
+C:\Users\Aom\source\VAE\Bigram\ConsoleApp1\obj\Debug\Bigram.exe
+C:\Users\Aom\source\VAE\Bigram\ConsoleApp1\obj\Debug\Bigram.pdb
+C:\Users\Aom\source\VAE\Bigram\Bigram\bin\Debug\Bigram.exe.config
+C:\Users\Aom\source\VAE\Bigram\Bigram\bin\Debug\Bigram.exe
+C:\Users\Aom\source\VAE\Bigram\Bigram\bin\Debug\Bigram.pdb
+C:\Users\Aom\source\VAE\Bigram\Bigram\obj\Debug\Bigram.csproj.CoreCompileInputs.cache
+C:\Users\Aom\source\VAE\Bigram\Bigram\obj\Debug\Bigram.exe
+C:\Users\Aom\source\VAE\Bigram\Bigram\obj\Debug\Bigram.pdb
+C:\Users\Aom\source\VAE\Bigram\Bigram\obj\Debug\Bigram.csprojAssemblyReference.cache
