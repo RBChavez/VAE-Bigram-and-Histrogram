@@ -10,7 +10,7 @@ namespace Bigram_VAE
         public string errorMessage{ get; set; }
         public Dictionary<string, int> bigramResults { get; set; }
     }
-    public class Bigram : BigramResults
+    sealed public class Bigram : BigramResults
     {
         private string filePath { get; set; }
         string lastWorldInLine = "";
@@ -70,8 +70,19 @@ namespace Bigram_VAE
                 var newList = new List<string>(bigrams);
                 // count bigrams in the list
                 var count = bigrams.Count(n => n == bigrams[0]);
-                // collect the distinct bigrams and count of that bigram
-                bigramResults.Add(bigrams[0], count);
+                // if the bigram is exist in the bigramResults 
+                // count of the bigram is the previous count + new count;
+                if (bigramResults.ContainsKey(bigrams[0]))
+                {
+                    int previousCount = 0;
+                    bigramResults.TryGetValue(bigrams[0], out previousCount);
+                    bigramResults[bigrams[0]] = previousCount + count;
+                }
+                else
+                {
+                    // collect the distinct bigrams and count of that bigram
+                    bigramResults.Add(bigrams[0], count);
+                }
                 // to improve the Time Complexity O notation 
                 // remove all of the bigrams that have been counted
                 // So O(n-m) :m = number of the items that have been removed

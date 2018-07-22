@@ -3,7 +3,7 @@ using System.IO;
 
 namespace Bigram_VAE
 {
-    class LogHistory
+    sealed class LogHistory
     {
         /// <summary>
         /// Write log history and Error log (**Need a write permission)
@@ -17,26 +17,27 @@ namespace Bigram_VAE
         }
         static public void LogWrite(string logMessage)
         {
-            string LogPath = @"C:\Logs\Bigram\";
-
-
-            // Check exists path 
-            if (!Directory.Exists(LogPath))
+            if (logMessage.Trim() != "")
             {
-                Directory.CreateDirectory(LogPath);
-            }
-            LogPath += "\\" + DateTime.Now.ToString("yyyy_MM_dd-HHmm") + ".txt";
-            try
-            {
-                using (StreamWriter w = File.AppendText(LogPath))
+                string LogPath = @"C:\Logs\Bigram\";
+                
+                // Check exists path 
+                if (!Directory.Exists(LogPath))
                 {
-                    Log(logMessage, w);
+                    Directory.CreateDirectory(LogPath);
+                }
+                LogPath += "\\" + DateTime.Now.ToString("yyyy_MM_dd-HHmm") + ".txt";
+                try
+                {
+                    using (StreamWriter w = File.AppendText(LogPath))
+                    {
+                        Log(logMessage, w);
+                    }
+                }
+                catch //(Exception ex)
+                {
                 }
             }
-            catch //(Exception ex)
-            {
-            }
-
         }
         
         static public void Log(string logMessage, TextWriter txtWriter)

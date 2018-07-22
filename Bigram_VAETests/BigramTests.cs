@@ -266,6 +266,33 @@ namespace Bigram_VAE.Tests
             }
         }
 
+        [TestCategory("basic"), TestMethod()]
+        public void BigramHistogram_ExampleInputCallTwice_ReturnEqual()
+        {
+            List<string> input = new List<string>();
+
+            input.Add("the quick");
+            input.Add("quick brown");
+            input.Add("brown fox");
+            input.Add("fox and");
+            input.Add("and the");
+            input.Add("the quick");
+            input.Add("quick blue");
+            input.Add("blue hare");
+            
+            Bigram bg = new Bigram();
+            Dictionary<string, int> bigramResults = bg.BigramHistogram(input);
+            List<int> Results = new List<int>(bigramResults.Values);
+            
+            bigramResults = bg.BigramHistogram(input);
+            Results = new List<int>(bigramResults.Values);
+            int[] ExpectedCount = { 4, 2, 2, 2, 2, 2, 2 };
+            for (int i = 0; i < ExpectedCount.Length; i++)
+            {
+                Assert.AreEqual(ExpectedCount[i], Results[i]);
+            }
+        }
+
         [TestCategory("mirror"), TestMethod()]
         public void BigramHistogram_Mirror_ReturnEqual()
         {
