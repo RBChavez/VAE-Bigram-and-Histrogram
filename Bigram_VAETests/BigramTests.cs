@@ -3,12 +3,11 @@ using System.Collections.Generic;
 
 namespace Bigram_VAE.Tests
 {
-
     [TestClass()]
     public class BigramTests
     {
+        #region BigramParsing
         List<string> expectedsBigrams = new List<string>();
-        int[] ExpectedCount = { 2, 1, 1, 1, 1, 1, 1 };
         private void GetExpectedsBigrams()
         {
             expectedsBigrams.Add("the quick");
@@ -89,7 +88,7 @@ namespace Bigram_VAE.Tests
         public void BigramParsing_SingleQouteSInput_ReturnEqual()
         {
             string input = "It's the quick brown fox and the quick blue hare.";
-            expectedsBigrams.Add("its the");
+            expectedsBigrams.Add("it's the");
             CompareEqual(input);
         }
 
@@ -97,7 +96,7 @@ namespace Bigram_VAE.Tests
         public void BigramParsing_SingleQouteTInput_ReturnEqual()
         {
             string input = "Can't the quick brown fox and the quick blue hare.";
-            expectedsBigrams.Add("cant the");
+            expectedsBigrams.Add("can't the");
             CompareEqual(input);
         }
 
@@ -147,13 +146,14 @@ namespace Bigram_VAE.Tests
         public void BigramParsing_AssignInput_ReturnEqual()
         {
             string input = "= The quick brown fox and the quick blue hare.";
+            expectedsBigrams.Add("= the");
             CompareEqual(input);
         }
 
         [TestCategory("separator"), TestMethod()]
         public void BigramParsing_CommaInput_ReturnEqual()
         {
-            string input = "= The,quick,brown,fox and the quick blue hare.";
+            string input = "The,quick,brown,fox and the quick blue hare.";
             CompareEqual(input);
         }
 
@@ -188,6 +188,30 @@ namespace Bigram_VAE.Tests
             expectedsBigrams.Add(@"the\ the");
             CompareEqual(input);
         }
+        [TestCategory("email"), TestMethod()]
+        public void BigramParsing_EmailInput_ReturnEqual()
+        {
+            string input = @"john@gmail.com The quick brown fox and the quick blue hare.";
+            expectedsBigrams.Add(@"john@gmail.com the");
+            CompareEqual(input);
+        }
+        [TestCategory("dash"), TestMethod()]
+        public void BigramParsing_dashInWorldInput_ReturnEqual()
+        {
+            string input = @"co-worker The quick brown fox and the quick blue hare.";
+            expectedsBigrams.Add(@"co-worker the");
+            CompareEqual(input);
+        }
+        [TestCategory("dash"), TestMethod()]
+        public void BigramParsing_dashBolletInput_ReturnEqual()
+        {
+            string input = @"-The quick brown fox and the quick blue hare.";
+            CompareEqual(input);
+        }
+#endregion
+
+        #region BigramHistogram
+        int[] expectedCount = { 2, 1, 1, 1, 1, 1, 1 };
 
         [TestCategory("basic"), TestMethod()]
         public void BigramHistogram_ExampleInput_ReturnEqual()
@@ -208,9 +232,9 @@ namespace Bigram_VAE.Tests
             Dictionary<string, int> bigramResults = bg.BigramHistogram(input);
             List<int> Results = new List<int>(bigramResults.Values);
 
-            for (int i = 0; i < ExpectedCount.Length; i++)
+            for (int i = 0; i < expectedCount.Length; i++)
             {
-                Assert.AreEqual(ExpectedCount[i], Results[i]);
+                Assert.AreEqual(expectedCount[i], Results[i]);
             }
         }
 
@@ -349,5 +373,6 @@ namespace Bigram_VAE.Tests
                 Assert.AreEqual(ExpectedCount[i], Results[i]);
             }
         }
+        #endregion
     }
 }

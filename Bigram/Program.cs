@@ -11,7 +11,7 @@ namespace Bigram_VAE
         static void GetInput()
         {
             // promt to get input path
-            Console.Write("\n Please enter path of your text file: ");
+            Console.Write("\n Please enter the path of your text file: ");
             // get input path as a string
             filePath = Console.ReadLine();
             try
@@ -29,10 +29,10 @@ namespace Bigram_VAE
                     // print out the results of the bigram and histogram
                     PrintOutput();
                 }
-                // file is not exist
+                // file does not exist
                 else
                 {
-                    TryItAgain();
+                    PromptForFile();
                 }
             }
             catch (Exception ex)
@@ -41,10 +41,10 @@ namespace Bigram_VAE
             }
             
         }
-        static  void TryItAgain()
+        static  void PromptForFile()
         {
-            // alert file is not exist
-            string message = "\nfile \"" + filePath + "\" is not exist";
+            // alert file does not exist
+            string message = "\nfile \"" + filePath + "\" does not exist";
             Console.WriteLine(message);
             // ask please n to exist or press y to continue
             Console.Write("Press y and enter to continue | n and enter to exit: ");
@@ -60,7 +60,7 @@ namespace Bigram_VAE
             }
             else
             {
-                TryItAgain();
+                PromptForFile();
             }
         }
         static void PrintOutput()

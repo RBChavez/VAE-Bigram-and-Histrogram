@@ -37,7 +37,6 @@ namespace Bigram_VAE
             else
                 return false;
         }
-
         /// <summary>
         /// Count Histogram of the bigrams in the text.
         /// </summary>
@@ -54,7 +53,6 @@ namespace Bigram_VAE
             }
                 
         }
-
         /// <summary>
         /// Count List of bigram
         /// </summary>
@@ -98,7 +96,7 @@ namespace Bigram_VAE
             }
         }
         /// <summary>
-        /// Get list of bigram
+        /// Get list of bigrams
         /// </summary>
         /// <param name="strInput"></param>
         /// <returns></returns>
@@ -107,29 +105,35 @@ namespace Bigram_VAE
             List<string> listOfBigram = new List<string>();
             try
             {
-                //replace specific charactor/string
-                strInput = strInput.Replace(" '", " ").Replace("' ", " ").Replace(" @ ", " ").Replace(". ", " ").Replace("(", " ")
-                    .Replace(")", " ").Replace(" \"", " ").Replace("\" ", " ").Replace("{"," ").Replace("}"," ")
-                    .Replace("["," ").Replace("]"," ").Replace("\""," ").Replace("'t","t").Replace("'s","s")
-                    .Replace("="," ").Replace(","," ");
+                TextTools textTools = new TextTools();
 
-                //split the world and collect in array without empty value
-                string[] listOfWorld = strInput.ToLower().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                #region Clear strInput
+                strInput = textTools.RemoveParentheses(strInput);   //remove parentheses
+                strInput = textTools.RemoveDoubleQoute(strInput);   //remove double qoute
+                #endregion
+
+                //split the world with space and comma, and collect in array without empty value
+                string[] listOfWorld = strInput.ToLower().Split(new[] { ' ',',' }, StringSplitOptions.RemoveEmptyEntries);
                 //creat list of bigrams
                 for (int i = 0; i < listOfWorld.Length; i++)
                 {
                     string firstWorld = lastWorldInLine;
+                    firstWorld = textTools.Apostrophes(firstWorld);         // removeqoute,keep apostrophes
+                    firstWorld = textTools.RemovePeriod(firstWorld);        // remove period, keep email 
+                    firstWorld = textTools.RemoveDash(firstWorld);          // remove dash bollet , keep dash for a world; co-worker
                     if (firstWorld != "")
                     {
-                        if (firstWorld.EndsWith(".")) firstWorld = firstWorld.Remove(firstWorld.Length - 1, 1);
                         string secondWorld = listOfWorld[i];
-                        if (secondWorld.EndsWith(".")) secondWorld = secondWorld.Remove(secondWorld.Length - 1, 1);
+                        secondWorld = textTools.Apostrophes(secondWorld);         // removeqoute,keep apostrophes
+                        secondWorld = textTools.RemovePeriod(secondWorld);        // remove period, keep email 
+                        secondWorld = textTools.RemoveDash(secondWorld);          // remove dash bollet , keep dash for a world; co-worker
                         // bigram
                         string bigram = firstWorld + " " + secondWorld;
                         // collect bigram
                         listOfBigram.Add(bigram);
                     }
-                    lastWorldInLine = listOfWorld[i]; // store last world for the next line
+                    // store last world for the next line
+                    lastWorldInLine = listOfWorld[i]; 
                 }
                 errorMessage = "";
             }
